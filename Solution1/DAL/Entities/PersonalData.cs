@@ -13,6 +13,5 @@ namespace DAL.Entities
         public string Surname { get; set; }
         public string Birthday { get; set; }
         public string Email { get; set; }
-        public IEnumerable<User> Users { get; set; }
     }
 }

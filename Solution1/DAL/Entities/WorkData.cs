@@ -11,6 +11,5 @@ namespace DAL.Entities
         public int WorkDataID { get; set; }
         public string Post { get; set; }
         public int Salary { get; set; }
-        public IEnumerable<User> Users { get; set; }
     }
 }
