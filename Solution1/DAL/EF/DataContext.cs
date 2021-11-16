@@ -12,7 +12,7 @@ namespace DAL.EF
     {
         public DbSet<PersonalData> Personaldata { get; set; }
         public DbSet<WorkData> Workdata { get; set; }
-        public DbSet<Message> Message { get; set; }​
+        public DbSet<Message> Message { get; set; }
         public DataContext(DbContextOptions options) : base(options)
         {
         }
