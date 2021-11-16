@@ -11,7 +11,7 @@ namespace DAL.Entities
         public int PersonalDataID { get; set; }
         public string Name { get; set; }
         public string Surname { get; set; }
-        public string Birthday { get; set; }
+        public DateTime Birthday { get; set; }
         public string Email { get; set; }
     }
 }

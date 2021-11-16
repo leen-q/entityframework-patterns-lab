@@ -9,7 +9,7 @@ namespace DAL.Entities
     public class Message
     {
         public int MessageID { get; set; }
-        public string Date { get; set; }
+        public DateTime Date { get; set; }
         public string Subject { get; set; }
         public string Text { get; set; }
     }
