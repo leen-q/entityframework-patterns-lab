@@ -30,7 +30,6 @@ namespace DAL.Tests
             var mockDbSet = new Mock<DbSet<PersonalData>>();
             mockContext.Setup(context =>context.Set<PersonalData>()).Returns(mockDbSet.Object);
 
-            //EFUnitOfWork uow = new EFUnitOfWork(mockContext.Object);
             var repository = new TestPersonalDataRepository(mockContext.Object);
 
             PersonalData expectedPersonalData = new Mock<PersonalData>().Object;
@@ -65,9 +64,6 @@ namespace DAL.Tests
             var mockContext = new Mock<DataContext>(opt);
             var mockDbSet = new Mock<DbSet<PersonalData>>();
             mockContext.Setup(context => context.Set<PersonalData>()).Returns(mockDbSet.Object);
-
-            //EFUnitOfWork uow = new EFUnitOfWork(mockContext.Object);
-            //IStreetRepository repository = uow.Streets;
 
             var repository = new TestPersonalDataRepository(mockContext.Object);
 
