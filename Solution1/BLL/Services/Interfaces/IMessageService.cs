@@ -9,6 +9,7 @@ namespace BLL.Services.Interfaces
 {
     public interface IMessageService
     {
+        void AddMessage(MessageDTO messageDto);
         IEnumerable<MessageDTO> GetMessages(int page);
     }
 }

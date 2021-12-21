@@ -27,6 +27,14 @@ namespace BLL.Services.ImplS
             _database = unitOfWork;
         }
 
+        public void AddMessage(MessageDTO messageDto)
+        {
+            Message mess = new Message(messageDto.MessageID, DateTime.Now, messageDto.Subject, messageDto.Text);
+
+            _database.Message.Create(mess);
+            _database.Save();
+        }
+
         public IEnumerable<MessageDTO> GetMessages(int pageNumber)
         {
             var user = SecurityContext.GetUser();
@@ -35,8 +43,6 @@ namespace BLL.Services.ImplS
             {
                 throw new MethodAccessException();
             }
-            //var osbbId = user.OSBBID;
-            //var messageEntities = _database.Message.Find(z => z.OSBBID == osbbId, pageNumber, pageSize);
             var messageEntities = _database.Message.GetAll();
             var mapper = new MapperConfiguration(cfg => cfg.CreateMap<Message, MessageDTO>()).CreateMapper();
             var messagesDto = mapper.Map<IEnumerable<Message>, List<MessageDTO>>(messageEntities);
